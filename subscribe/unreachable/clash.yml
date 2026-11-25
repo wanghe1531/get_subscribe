@@ -1,0 +1,560 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: warning
+ipv6: true
+dns:
+  enable: true
+  listen: 127.0.0.1:1053
+  ipv6: true
+  prefer-h3: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+  - localhost
+  - +.localhost
+  - +.lan
+  - +.local
+  - +.home.arpa
+  use-hosts: true
+  use-system-hosts: true
+  respect-rules: true
+  default-nameserver:
+  - https://223.5.5.5/dns-query#DIRECT
+  - https://223.6.6.6/dns-query#DIRECT
+  proxy-server-nameserver:
+  - https://223.5.5.5/dns-query#DIRECT
+  - https://223.6.6.6/dns-query#DIRECT
+  direct-nameserver:
+  - https://223.5.5.5/dns-query#DIRECT
+  - https://doh.pub/dns-query#DIRECT
+  direct-nameserver-follow-policy: false
+  nameserver-policy:
+    geosite:cn:
+    - https://223.5.5.5/dns-query#DIRECT
+    - https://doh.pub/dns-query#DIRECT
+  nameserver:
+  - https://1.1.1.1/dns-query
+  - https://1.0.0.1/dns-query
+proxies:
+- type: anytls
+  name: 🇹🇼_TW_台湾_IPV4
+  server: a54ge.df6h451rh.xin
+  port: 443
+  password: 0324fbc29561
+  tls: true
+  servername: docs.microsoft.com
+  sni: docs.microsoft.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+- name: '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  network: ws
+  port: 22573
+  server: 84.235.244.108
+  servername: uae.unixzone.us
+  tls: false
+  type: vless
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+  ws-opts:
+    headers:
+      Host: uae.unixzone.us
+    path: /
+- client-fingerprint: chrome
+  name: '🏳[www.v2nodes.com] vless- #8'
+  network: ws
+  port: 443
+  server: 168.107.79.37
+  servername: www.microsoft.com
+  tls: true
+  type: vless
+  uuid: c5e7a9b1-3d5f-4a6c-8b0d-2f4a6c8e0b2d
+  ws-opts:
+    path: /7b9977b2af9da85fa86adc065c362efe
+- client-fingerprint: chrome
+  name: 🇹🇼[www.v2nodes.com] vless-TW-1...
+  network: ws
+  port: 443
+  server: 60.248.219.53
+  servername: ty986gfazs.cainiaohub.xyz
+  tls: true
+  type: vless
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  ws-opts:
+    headers:
+      Host: ty986gfazs.cainiaohub.xyz
+    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+- cipher: aes-256-gcm
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1546...
+  password: g5MeD6Ft3CWlJId
+  port: 5003
+  server: 51.222.155.32
+  type: ss
+- cipher: aes-256-gcm
+  name: '🇨🇭[www.v2nodes.com] ss-CH-1615... #1'
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 79.127.184.104
+  type: ss
+- cipher: 2022-blake3-chacha20-poly1305
+  name: 🇩🇪[www.v2nodes.com] ss-DE-1608...
+  password: 3NBsnBLanPfG6i3S2GTHineswr6EeSJPb0PCeMQoGoA=
+  port: 443
+  server: 47.85.238.210
+  type: ss
+- cipher: aes-256-gcm
+  name: 🇯🇵[www.v2nodes.com] ss-JP-1544...
+  password: 3eOFeNssde7PYYMv
+  port: 80
+  server: 84.247.155.196
+  type: ss
+- cipher: aes-256-gcm
+  name: 🇳🇱[www.v2nodes.com] ss-NL-1565...
+  password: iOaIXNsQXVIxwmkY
+  port: 8388
+  server: 140.82.56.38
+  type: ss
+- name: '🇯🇵 日本 | JPN #1'
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  port: 34745
+  server: win2loxfde0303.gggrelay.org
+  skip-cert-verify: true
+  sni: nu3rb.supertoolify.com
+  type: trojan
+  udp: true
+- client-fingerprint: chrome
+  name: 🇹🇼 🇨🇳 台湾 | TWN 2
+  password: 0324fbc29561
+  port: 443
+  server: a54ge.df6h451rh.xin
+  skip-cert-verify: true
+  sni: docs.microsoft.com
+  type: anytls
+  udp: true
+- fingerprint: ''
+  name: 🇹🇼TW_1|1.2MB/s
+  password: 2902c46c8493
+  port: 443
+  server: er8u54dh.df6h451rh.xin
+  skip-cert-verify: true
+  sni: px.ads.linkedin.com
+  type: anytls
+  udp: true
+  username: 2902c46c8493
+- cipher: 2022-blake3-chacha20-poly1305
+  name: '🇩🇪 德国 | DEU #14'
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  port: 443
+  server: 18.197.131.255
+  type: ss
+  udp: true
+- cipher: 2022-blake3-chacha20-poly1305
+  name: '🇩🇪 德国 | DEU #19'
+  password: Cg2Dw4OhdBZhqbeO9ZTA3g/Gk/AvsrYZGhAJeGnQIx4=
+  port: 443
+  server: 35.178.82.244
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: v6-finaltelekom-globalinetforallalwaysandneverbanyoubelieveme-com
+  name: 🇷🇺 俄罗斯 | RUS 2
+  network: grpc
+  port: 29976
+  server: 195.208.123.6
+  servername: v6.finaltelekom.globalinetforallalwaysandneverbanyoubelieveme.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 44ad45aa-3acc-46fd-8b96-aa6589b6aa1c
+- cipher: chacha20-ietf-poly1305
+  name: '🇸🇬 新加坡 | SGP #1'
+  password: 7e68e32f-8015-4f37-9082-70e8b0b58043
+  port: 8443
+  server: 13.212.238.53
+  type: ss
+  udp: true
+- name: 🇹🇼 🇨🇳 台湾 | TWN
+  password: 2902c46c8493
+  port: 443
+  server: rtifgjdr.df6h451rh.xin
+  skip-cert-verify: true
+  sni: docs.microsoft.com
+  type: anytls
+  udp: true
+- name: 🇺🇸 美国 | USA 2
+  password: 0324fbc29561
+  port: 443
+  server: sdf65h46wr.df6h451rh.xin
+  skip-cert-verify: true
+  type: anytls
+  udp: true
+- client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: ''
+  name: '🇷🇺 俄罗斯 | RUS #2'
+  network: grpc
+  port: 29976
+  server: 195.208.123.6
+  servername: v6.finaltelekom.globalinetforallalwaysandneverbanyoubelieveme.com
+  tls: true
+  type: vless
+  uuid: 44ad45aa-3acc-46fd-8b96-aa6589b6aa1c
+- name: 🇩🇪 德国 | DEU 4
+  server: signal.frnhk.xyz
+  port: 443
+  type: anytls
+  password: 9e34ee67-c4dd-4c49-8e33-bbfac6efbc33
+  udp: true
+  sni: signal.frnhk.xyz
+  skip-cert-verify: true
+- name: 🇳🇱 荷兰 | NLD
+  server: pnj.paxaro.ir
+  port: 443
+  type: vless
+  uuid: 6db83ec3-fad5-4514-b752-4e42276eb03b
+  tls: true
+  alpn:
+  - h2
+  - http/1.1
+  servername: pnj.paxaro.ir
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: ProxyPool | 🇹🇼 🇨🇳 台湾 | TWN
+  server: er8u54dh.df6h451rh.xin
+  port: 443
+  type: anytls
+  password: 2902c46c8493
+  sni: px.ads.linkedin.com
+  skip-cert-verify: true
+- name: ProxyPool | 🇺🇸 美国 | USA 3
+  server: 141.193.154.34
+  port: 10001
+  type: vless
+  uuid: 21a54f58-b362-444f-b834-fdfa9602fce8
+  tls: true
+  reality-opts:
+    public-key: 7AqAdnGRTolgqNAC_ZPTmWux3TRTatBAmIey_DSrv1Y
+    short-id: ec584974fff0
+  servername: cloudflare.com
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+proxy-groups:
+- name: ermao.net | 🚀 节点选择
+  type: select
+  proxies:
+  - ermao.net | ♻️ 自动选择
+  - DIRECT
+  - 🇹🇼_TW_台湾_IPV4
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  - '🏳[www.v2nodes.com] vless- #8'
+  - 🇹🇼[www.v2nodes.com] vless-TW-1...
+  - 🇨🇦[www.v2nodes.com] ss-CA-1546...
+  - '🇨🇭[www.v2nodes.com] ss-CH-1615... #1'
+  - 🇩🇪[www.v2nodes.com] ss-DE-1608...
+  - 🇯🇵[www.v2nodes.com] ss-JP-1544...
+  - 🇳🇱[www.v2nodes.com] ss-NL-1565...
+  - '🇯🇵 日本 | JPN #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN 2
+  - 🇹🇼TW_1|1.2MB/s
+  - '🇩🇪 德国 | DEU #14'
+  - '🇩🇪 德国 | DEU #19'
+  - 🇷🇺 俄罗斯 | RUS 2
+  - '🇸🇬 新加坡 | SGP #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN
+  - 🇺🇸 美国 | USA 2
+  - '🇷🇺 俄罗斯 | RUS #2'
+  - 🇩🇪 德国 | DEU 4
+  - 🇳🇱 荷兰 | NLD
+  - ProxyPool | 🇹🇼 🇨🇳 台湾 | TWN
+  - ProxyPool | 🇺🇸 美国 | USA 3
+- name: ermao.net | ♻️ 自动选择
+  type: url-test
+  proxies:
+  - 🇹🇼_TW_台湾_IPV4
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  - '🏳[www.v2nodes.com] vless- #8'
+  - 🇹🇼[www.v2nodes.com] vless-TW-1...
+  - 🇨🇦[www.v2nodes.com] ss-CA-1546...
+  - '🇨🇭[www.v2nodes.com] ss-CH-1615... #1'
+  - 🇩🇪[www.v2nodes.com] ss-DE-1608...
+  - 🇯🇵[www.v2nodes.com] ss-JP-1544...
+  - 🇳🇱[www.v2nodes.com] ss-NL-1565...
+  - '🇯🇵 日本 | JPN #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN 2
+  - 🇹🇼TW_1|1.2MB/s
+  - '🇩🇪 德国 | DEU #14'
+  - '🇩🇪 德国 | DEU #19'
+  - 🇷🇺 俄罗斯 | RUS 2
+  - '🇸🇬 新加坡 | SGP #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN
+  - 🇺🇸 美国 | USA 2
+  - '🇷🇺 俄罗斯 | RUS #2'
+  - 🇩🇪 德国 | DEU 4
+  - 🇳🇱 荷兰 | NLD
+  - ProxyPool | 🇹🇼 🇨🇳 台湾 | TWN
+  - ProxyPool | 🇺🇸 美国 | USA 3
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+- name: 🌍 国外媒体
+  type: select
+  proxies:
+  - ermao.net | 🚀 节点选择
+  - ermao.net | ♻️ 自动选择
+  - 🎯 全球直连
+  - 🇹🇼_TW_台湾_IPV4
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  - '🏳[www.v2nodes.com] vless- #8'
+  - 🇹🇼[www.v2nodes.com] vless-TW-1...
+  - 🇨🇦[www.v2nodes.com] ss-CA-1546...
+  - '🇨🇭[www.v2nodes.com] ss-CH-1615... #1'
+  - 🇩🇪[www.v2nodes.com] ss-DE-1608...
+  - 🇯🇵[www.v2nodes.com] ss-JP-1544...
+  - 🇳🇱[www.v2nodes.com] ss-NL-1565...
+  - '🇯🇵 日本 | JPN #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN 2
+  - 🇹🇼TW_1|1.2MB/s
+  - '🇩🇪 德国 | DEU #14'
+  - '🇩🇪 德国 | DEU #19'
+  - 🇷🇺 俄罗斯 | RUS 2
+  - '🇸🇬 新加坡 | SGP #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN
+  - 🇺🇸 美国 | USA 2
+  - '🇷🇺 俄罗斯 | RUS #2'
+  - 🇩🇪 德国 | DEU 4
+  - 🇳🇱 荷兰 | NLD
+  - ProxyPool | 🇹🇼 🇨🇳 台湾 | TWN
+  - ProxyPool | 🇺🇸 美国 | USA 3
+- name: 📲 电报信息
+  type: select
+  proxies:
+  - ermao.net | 🚀 节点选择
+  - 🎯 全球直连
+  - 🇹🇼_TW_台湾_IPV4
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  - '🏳[www.v2nodes.com] vless- #8'
+  - 🇹🇼[www.v2nodes.com] vless-TW-1...
+  - 🇨🇦[www.v2nodes.com] ss-CA-1546...
+  - '🇨🇭[www.v2nodes.com] ss-CH-1615... #1'
+  - 🇩🇪[www.v2nodes.com] ss-DE-1608...
+  - 🇯🇵[www.v2nodes.com] ss-JP-1544...
+  - 🇳🇱[www.v2nodes.com] ss-NL-1565...
+  - '🇯🇵 日本 | JPN #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN 2
+  - 🇹🇼TW_1|1.2MB/s
+  - '🇩🇪 德国 | DEU #14'
+  - '🇩🇪 德国 | DEU #19'
+  - 🇷🇺 俄罗斯 | RUS 2
+  - '🇸🇬 新加坡 | SGP #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN
+  - 🇺🇸 美国 | USA 2
+  - '🇷🇺 俄罗斯 | RUS #2'
+  - 🇩🇪 德国 | DEU 4
+  - 🇳🇱 荷兰 | NLD
+  - ProxyPool | 🇹🇼 🇨🇳 台湾 | TWN
+  - ProxyPool | 🇺🇸 美国 | USA 3
+- name: Ⓜ️ 微软服务
+  type: select
+  proxies:
+  - 🎯 全球直连
+  - ermao.net | 🚀 节点选择
+  - 🇹🇼_TW_台湾_IPV4
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  - '🏳[www.v2nodes.com] vless- #8'
+  - 🇹🇼[www.v2nodes.com] vless-TW-1...
+  - 🇨🇦[www.v2nodes.com] ss-CA-1546...
+  - '🇨🇭[www.v2nodes.com] ss-CH-1615... #1'
+  - 🇩🇪[www.v2nodes.com] ss-DE-1608...
+  - 🇯🇵[www.v2nodes.com] ss-JP-1544...
+  - 🇳🇱[www.v2nodes.com] ss-NL-1565...
+  - '🇯🇵 日本 | JPN #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN 2
+  - 🇹🇼TW_1|1.2MB/s
+  - '🇩🇪 德国 | DEU #14'
+  - '🇩🇪 德国 | DEU #19'
+  - 🇷🇺 俄罗斯 | RUS 2
+  - '🇸🇬 新加坡 | SGP #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN
+  - 🇺🇸 美国 | USA 2
+  - '🇷🇺 俄罗斯 | RUS #2'
+  - 🇩🇪 德国 | DEU 4
+  - 🇳🇱 荷兰 | NLD
+  - ProxyPool | 🇹🇼 🇨🇳 台湾 | TWN
+  - ProxyPool | 🇺🇸 美国 | USA 3
+- name: 🍎 苹果服务
+  type: select
+  proxies:
+  - ermao.net | 🚀 节点选择
+  - 🎯 全球直连
+  - 🇹🇼_TW_台湾_IPV4
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  - '🏳[www.v2nodes.com] vless- #8'
+  - 🇹🇼[www.v2nodes.com] vless-TW-1...
+  - 🇨🇦[www.v2nodes.com] ss-CA-1546...
+  - '🇨🇭[www.v2nodes.com] ss-CH-1615... #1'
+  - 🇩🇪[www.v2nodes.com] ss-DE-1608...
+  - 🇯🇵[www.v2nodes.com] ss-JP-1544...
+  - 🇳🇱[www.v2nodes.com] ss-NL-1565...
+  - '🇯🇵 日本 | JPN #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN 2
+  - 🇹🇼TW_1|1.2MB/s
+  - '🇩🇪 德国 | DEU #14'
+  - '🇩🇪 德国 | DEU #19'
+  - 🇷🇺 俄罗斯 | RUS 2
+  - '🇸🇬 新加坡 | SGP #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN
+  - 🇺🇸 美国 | USA 2
+  - '🇷🇺 俄罗斯 | RUS #2'
+  - 🇩🇪 德国 | DEU 4
+  - 🇳🇱 荷兰 | NLD
+  - ProxyPool | 🇹🇼 🇨🇳 台湾 | TWN
+  - ProxyPool | 🇺🇸 美国 | USA 3
+- name: 🎯 全球直连
+  type: select
+  proxies:
+  - DIRECT
+  - ermao.net | 🚀 节点选择
+  - ermao.net | ♻️ 自动选择
+- name: 🛑 全球拦截
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+- name: 🍃 应用净化
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+- name: 🐟 漏网之鱼
+  type: select
+  proxies:
+  - ermao.net | 🚀 节点选择
+  - 🎯 全球直连
+  - ermao.net | ♻️ 自动选择
+  - 🇹🇼_TW_台湾_IPV4
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  - '🏳[www.v2nodes.com] vless- #8'
+  - 🇹🇼[www.v2nodes.com] vless-TW-1...
+  - 🇨🇦[www.v2nodes.com] ss-CA-1546...
+  - '🇨🇭[www.v2nodes.com] ss-CH-1615... #1'
+  - 🇩🇪[www.v2nodes.com] ss-DE-1608...
+  - 🇯🇵[www.v2nodes.com] ss-JP-1544...
+  - 🇳🇱[www.v2nodes.com] ss-NL-1565...
+  - '🇯🇵 日本 | JPN #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN 2
+  - 🇹🇼TW_1|1.2MB/s
+  - '🇩🇪 德国 | DEU #14'
+  - '🇩🇪 德国 | DEU #19'
+  - 🇷🇺 俄罗斯 | RUS 2
+  - '🇸🇬 新加坡 | SGP #1'
+  - 🇹🇼 🇨🇳 台湾 | TWN
+  - 🇺🇸 美国 | USA 2
+  - '🇷🇺 俄罗斯 | RUS #2'
+  - 🇩🇪 德国 | DEU 4
+  - 🇳🇱 荷兰 | NLD
+  - ProxyPool | 🇹🇼 🇨🇳 台湾 | TWN
+  - ProxyPool | 🇺🇸 美国 | USA 3
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rules/LocalAreaNetwork.list
+    interval: 86400
+  BanAD:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./rules/BanAD.list
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./rules/BanProgramAD.list
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rules/GoogleCN.list
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./rules/SteamCN.list
+    interval: 86400
+  Microsoft:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+    path: ./rules/Microsoft.list
+    interval: 86400
+  Apple:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+    path: ./rules/Apple.list
+    interval: 86400
+  ProxyMedia:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rules/ProxyMedia.list
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./rules/Telegram.list
+    interval: 86400
+  ProxyLite:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./rules/ProxyLite.list
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rules/ChinaDomain.list
+    interval: 86400
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rules/ChinaCompanyIp.list
+    interval: 86400
+rules:
+- RULE-SET,LocalAreaNetwork,🎯 全球直连
+- RULE-SET,BanAD,🛑 全球拦截
+- RULE-SET,BanProgramAD,🍃 应用净化
+- RULE-SET,GoogleCN,🎯 全球直连
+- RULE-SET,SteamCN,🎯 全球直连
+- RULE-SET,Microsoft,Ⓜ️ 微软服务
+- RULE-SET,Apple,🍎 苹果服务
+- RULE-SET,ProxyMedia,🌍 国外媒体
+- RULE-SET,Telegram,📲 电报信息
+- RULE-SET,ProxyLite,ermao.net | 🚀 节点选择
+- RULE-SET,ChinaDomain,🎯 全球直连
+- RULE-SET,ChinaCompanyIp,🎯 全球直连
+- GEOIP,CN,🎯 全球直连
+- MATCH,🐟 漏网之鱼
